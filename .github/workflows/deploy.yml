@@ -1,7 +1,5 @@
-
 name: Deploy to Vercel
 
-# Trigger this workflow when code is pushed to the main branch
 on:
   push:
     branches:
@@ -9,17 +7,16 @@ on:
 
 jobs:
   deploy:
-    # The environment where this job will run
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository code
+      # Step 1: Checkout the repository code (using v3)
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js version
+      # Step 2: Set up Node.js version (using v3)
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20.11.0' # This matches your Node.js version
 
